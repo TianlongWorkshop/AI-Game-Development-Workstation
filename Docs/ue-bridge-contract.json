@@ -1,0 +1,14 @@
+{
+  "protocol": "aigw.ue-bridge/1",
+  "status": "design-only-not-implemented",
+  "transport": "undecided-until-plugin-validation",
+  "authentication": "per-session-random-token-loopback-only",
+  "handshakeRequired": ["editorVersion", "projectId", "sessionNonce", "pluginVersion", "capabilities", "readOnly"],
+  "capabilities": {
+    "blueprint.read": {"risk": "read", "input": ["assetPath"], "output": ["assetRevision", "nodes", "pins", "connections", "diagnostics"]},
+    "blueprint.plan_patch": {"risk": "read", "input": ["assetPath", "expectedRevision", "intent"], "output": ["patchId", "patchHash", "operations", "previewDiff", "risks"]},
+    "blueprint.apply_patch": {"risk": "high", "requires": ["matching-approval-patchHash", "backup", "expectedRevision", "allowed-operation-schema"], "output": ["newRevision", "compileResult", "backupRef", "rollbackResult"]},
+    "project.compile": {"risk": "execute", "requires": ["project-boundary", "authorized-configuration"], "output": ["exitCode", "diagnostics", "logRef"]}
+  },
+  "forbidden": ["arbitrary-shell", "arbitrary-python", "arbitrary-console-command", "unapproved-delete", "external-network-listener"]
+}

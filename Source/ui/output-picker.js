@@ -1,0 +1,11 @@
+(function(){
+ 'use strict';
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ async function open(context,graph){
+  const workspace=context.workspaceId,models=await context.api('modelCatalog'),current=await context.api('outputLoad',{projectId:context.projectId,workflowId:graph.workflowId,workspaceId:workspace}),route=await context.api('modelRoute',{workspace,task:'output'});
+  const formats={create:['blend','glb','fbx','png','report'],animation:['blend','glb','rig-report'],materials:['png','exr','material-json','report'],ue:['blueprint-report','patch-plan','compile-log']}[workspace]||['report'];
+  context.modal('选择输出目标与本地执行模型',`<p>当前工作区：${esc(workspace)}。本地模式不会上传资产；执行时会写入项目 Generated 或对应软件工程目录。</p><label>主脑 / 输出模型<select id="output-model">${models.filter(m=>m.workspaces.includes(workspace)).map(m=>`<option value="${esc(m.id)}" ${m.id===(current.model||route.specialist)?'selected':''}>${esc(m.name)} · ${esc(m.price)}</option>`).join('')}</select></label><label>输出目标<select id="output-target"><option value="project-generated">项目 Generated 目录</option><option value="blender-project" ${current.target==='blender-project'?'selected':''}>Blender 工程</option><option value="ue-project" ${current.target==='ue-project'?'selected':''}>UE 工程</option><option value="external-review" ${current.target==='external-review'?'selected':''}>仅生成审阅包</option></select></label><label>输出格式<select id="output-format">${formats.map(f=>`<option value="${f}" ${f===current.format?'selected':''}>${f}</option>`).join('')}</select></label><p class="notice info">路由：主脑 ${esc(route.main)} → 专用执行器 ${esc(route.specialist)}。输出按钮会先保存此设置，再由工作区的执行按钮生成产物。</p><button id="output-save">保存输出设置</button>`,'',true);
+  document.querySelector('#output-save').onclick=async()=>{try{const value={model:document.querySelector('#output-model').value,target:document.querySelector('#output-target').value,format:document.querySelector('#output-format').value,expectedRevision:current.revision};const saved=await context.api('outputSave',{projectId:context.projectId,workflowId:graph.workflowId,workspaceId:workspace,value});context.toast(`输出设置已保存：${saved.format} / ${saved.target}`);document.querySelector('[data-action="modal-close"]')?.click();}catch(e){context.toast(e.message,true);}};
+ }
+ window.OutputPicker={open};
+})();

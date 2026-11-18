@@ -1,0 +1,27 @@
+{
+    "schema":  1,
+    "taskId":  "4180c358-c339-403e-9a0a-857195563f2a",
+    "request":  "制作一个木箱道具，导出 GLB 并保留 Blender 工程。",
+    "recipe":  "crate",
+    "approval":  {
+                     "approvedAt":  "2026-11-10T13:54:42.340Z",
+                     "scope":  "在新目录中生成资产、渲染与验证",
+                     "actor":  "local-user",
+                     "risk":  "create-only"
+                 },
+    "validation":  {
+                       "ok":  true,
+                       "meshes":  38,
+                       "vertices":  5286,
+                       "triangles":  4104,
+                       "blender":  "4.4.1"
+                   },
+    "outputs":  [
+                    "Generated/4180c358-c339-403e-9a0a-857195563f2a/asset.blend",
+                    "Generated/4180c358-c339-403e-9a0a-857195563f2a/asset.glb",
+                    "Generated/4180c358-c339-403e-9a0a-857195563f2a/preview.png",
+                    "Generated/4180c358-c339-403e-9a0a-857195563f2a/validation.json"
+                ],
+    "generatedAt":  "2026-11-10T13:54:51.906Z",
+    "method":  "deterministic-procedural-modeling"
+}

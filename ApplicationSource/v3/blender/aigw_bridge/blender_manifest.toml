@@ -1,0 +1,21 @@
+﻿schema_version = "1.0.0"
+
+id = "aigw_bridge"
+version = "0.1.3"
+name = "AIGW Bridge"
+tagline = "Let AI Game Workstation operate Blender through local MCP"
+maintainer = "AI Game Workstation"
+type = "add-on"
+
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+
+[permissions]
+network = "Local MCP server on 127.0.0.1 for AI Game Workstation"
+files = "Export models and write a local session file"
+
+
+

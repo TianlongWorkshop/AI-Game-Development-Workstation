@@ -1,0 +1,7 @@
+'use strict';
+const fs=require('node:fs'),C=require('./core.cjs'),W=require('./workflow.cjs');
+const formats={create:['blend','glb','fbx','png','report'],animation:['blend','glb','rig-report'],materials:['png','exr','material-json','report'],ue:['blueprint-report','patch-plan','compile-log']};
+function file(p,workflowId){return W.file(p,'outputs',workflowId+'.json');}
+function load(p,workflowId,workspace){const f=file(p,workflowId);if(!fs.existsSync(f))return {schemaVersion:1,workflowId,workspace,target:'project-generated',format:formats[workspace]?.[0]||'report',model:'local-orchestrator',destination:'Generated',revision:0};return JSON.parse(fs.readFileSync(f,'utf8'));}
+function save(p,workflowId,workspace,value){if(typeof workspace!=='string'||!formats[workspace])throw Error('工作区输出类型无效');if(!formats[workspace].includes(value.format))throw Error('当前工作区不支持此输出格式');if(!['project-generated','blender-project','ue-project','external-review'].includes(value.target))throw Error('输出目标无效');if(typeof value.model!=='string'||!value.model)throw Error('必须选择输出模型');const old=load(p,workflowId,workspace);if(value.expectedRevision!==undefined&&value.expectedRevision!==old.revision)throw Error('输出设置已变动，请重新载入');const next={schemaVersion:1,workflowId,workspace,target:value.target,format:value.format,model:value.model,destination:value.destination||'Generated',revision:old.revision+1,updatedAt:C.now()};C.atomicWrite(file(p,workflowId),next);return next;}
+module.exports={formats,load,save};

@@ -1,0 +1,101 @@
+/* AIGW 3.0 · AI 助手、模型设置与连接页样式（沿用 2.0 配色变量） */
+.content.cp-content{padding:0;overflow:hidden;display:flex}
+.cp{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;padding:18px 22px 0}
+.cp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.cp-head p{font-size:11px;margin-top:5px}
+.cp-tools select{width:auto;max-width:230px;font-size:11px;padding:5px 7px}
+.cp-status{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 8px}
+.cp-chip{font-size:10px;color:#a9b0bb;border:1px solid #42464e;border-radius:20px;padding:3px 10px;display:inline-flex;align-items:center;background:#2a2c31}
+.cp-chip.good{border-color:#476252;color:#b5d3be}
+.cp-status+.notice,.cp .notice{margin:4px 0 8px}
+.cp-log{flex:1;min-height:0;overflow:auto;padding:10px 4px 16px;border-top:1px solid var(--line)}
+.cp-empty{text-align:center;padding:36px 10px;color:#9aa3af}
+.cp-empty .icon{width:34px;height:34px;color:var(--accent);stroke-width:1}
+.cp-empty h3{margin:10px 0 6px;font-weight:500}
+.cp-suggest{display:flex;flex-direction:column;gap:6px;max-width:560px;margin:14px auto 0}
+.cp-suggest button{white-space:normal;text-align:left;background:#2d3035;border-color:#41454d;font-size:12px;line-height:1.6}
+.cp-msg{display:flex;gap:10px;margin:12px 0;align-items:flex-start}
+.cp-msg.user{justify-content:flex-end}
+.cp-bubble{max-width:82%;padding:10px 13px;border-radius:8px;font-size:12.5px;line-height:1.8;overflow-wrap:anywhere}
+.cp-msg.user .cp-bubble{background:#3b332e;border:1px solid #5e4b3d;color:#f0e2d4}
+.cp-msg.ai .cp-bubble{background:#2c2f34;border:1px solid #3e4249;color:#dfe3e8}
+.cp-avatar{width:26px;height:26px;border-radius:7px;background:#3b332e;color:var(--accent);font-size:10px;font-weight:600;display:grid;place-items:center;flex-shrink:0;border:1px solid #5e4b3d}
+.cp-meta{font-size:9.5px;color:#7f8894;margin-top:6px}
+.cp-bubble code{font-family:Consolas,monospace;background:#1f2125;padding:1px 4px;border-radius:3px;font-size:11px}
+.cp-code{font-family:Consolas,'Microsoft YaHei',monospace;white-space:pre-wrap;font-size:10.5px;line-height:1.7;background:#1d1f23;border:1px solid #3c4048;border-radius:5px;padding:9px 11px;margin:8px 0;max-height:260px;overflow:auto;color:#c4ccd6}
+.cp-code.result{color:#a9b9c9}
+.cp-thinking{font-size:11px;color:#9aa3af;margin:10px 0 10px 36px;display:flex;align-items:center;gap:8px}
+.cp-info{font-size:11px;color:#a7b8c9;background:#26394a55;border-left:2px solid #6f91b7;padding:8px 12px;margin:10px 0 10px 36px;line-height:1.8}
+.cp-error{font-size:11px;color:#f5b0a8;background:#47333655;border-left:2px solid var(--red);padding:8px 12px;margin:10px 0 10px 36px;line-height:1.8;white-space:pre-wrap}
+.cp-tool{margin:6px 0 6px 36px;border:1px solid #3c4047;border-radius:6px;background:#282a2f;padding:7px 10px}
+.cp-tool-head{display:flex;align-items:center;gap:8px;font-size:11px}
+.cp-kind{width:18px;height:18px;border-radius:4px;display:grid;place-items:center;font-size:10px;font-weight:600;background:#35373b;color:#ddd;border:1px solid #555961;flex-shrink:0}
+.cp-kind.blender{color:var(--accent);border-color:#5e4b3d}
+.cp-tool-name{font-family:Consolas,monospace;color:#d6dbe2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.cp-tool-status{margin-left:auto;color:#9aa3af;white-space:nowrap;display:flex;align-items:center;gap:5px}
+.cp-tool.st-ok .cp-tool-status{color:var(--green)}
+.cp-tool.st-error .cp-tool-status,.cp-tool.st-denied .cp-tool-status{color:var(--red)}
+.cp-tool.st-awaiting{border-color:var(--accent);background:#2f2b28}
+.cp-tool.st-awaiting .cp-tool-status{color:var(--accent)}
+.cp-tool details{margin-top:6px}
+.cp-tool summary{font-size:10px;color:#8b94a1;cursor:pointer}
+.cp-approve{margin-top:8px}
+.cp-approve p{font-size:11px;color:#d8c3ad;line-height:1.7}
+.badge.lvl{font-size:9px;padding:1px 5px}
+.badge.lvl0{color:#9fb5c9;border-color:#3f5568}
+.badge.lvl1{color:#b5d3be;border-color:#476252}
+.badge.lvl2{color:#e9c27f;border-color:#7a6236}
+.badge.lvl3{color:#f0a49a;border-color:#7d4640}
+.cp-imgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.cp-shot{max-width:100%;max-height:300px;border:1px solid #444850;border-radius:5px;background:#1c1e22;cursor:zoom-in}
+.cp-thumb{max-width:160px;max-height:110px;border-radius:5px;border:1px solid #6a5848}
+.cp-composer{border-top:1px solid var(--line);padding:10px 0 12px;display:flex;flex-direction:column;gap:8px;background:#26282c}
+.cp-composer textarea{min-height:64px;max-height:220px;line-height:1.7;font-size:12.5px}
+.cp-attach{display:flex;gap:8px;flex-wrap:wrap}
+.cp-attach:empty{display:none}
+.cp-att{position:relative}
+.cp-att img{height:54px;border-radius:5px;border:1px solid #555}
+.cp-att button{position:absolute;top:-6px;right:-6px;padding:0 5px;background:#41454d;border-radius:50%;font-size:11px}
+.v3-wide{max-width:860px}
+.v3-table td{vertical-align:middle}
+.v3-table .badge{margin:2px 2px 2px 0}
+.v3-actions{white-space:nowrap;text-align:right}
+.v3-form{border:1px solid #4c4841;background:#2e2d2d;border-radius:6px;padding:14px 16px;margin:14px 0}
+.v3-form .field{margin:10px 0}
+.split3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.v3-card{border:1px solid var(--line);border-radius:7px;padding:14px 16px;margin-bottom:14px;background:#282a2f}
+.v3-card .path{margin-top:4px}
+.v3-card details{margin-top:10px}
+.v3-card summary{font-size:11px;color:#9aa3af;cursor:pointer}
+.v3-card .table{margin-top:8px}
+.v3-check{display:flex;align-items:center;gap:7px;margin:10px 0 0;font-size:11px;color:#aab1bb}
+.v3-check input{width:auto}
+.v3-steps{margin-top:10px;font-size:11px;color:#b3bac4;line-height:1.9}
+.v3-steps ol{margin:0 0 8px;padding-left:18px}
+.v3-steps input{font-size:11px;padding:6px 8px}
+@media(max-width:1250px){.split3{grid-template-columns:1fr 1fr}}
+.layout.cp-layout{grid-template-columns:190px minmax(440px,1fr)}
+.layout.cp-layout .inspector,.layout.cp-layout .bottom-panel{display:none}
+@media(max-width:1250px){.layout.cp-layout{grid-template-columns:166px minmax(430px,1fr)}}
+
+/* 模型与系统：主模型 / 专长模型 */
+.v3-model{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line,#3a3d44);border-radius:10px;margin:8px 0;background:rgba(255,255,255,.02)}
+.v3-model.active{border-color:#e8913a;background:rgba(232,145,58,.06)}
+.v3-model.off{opacity:.55}
+.v3-model .v3-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.v3-spec-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.v3-spec-pick .recipe p{font-size:11px;margin-top:4px}
+.badge.spec-vision{background:rgba(96,165,250,.18);color:#9cc4ff}
+.badge.spec-code{background:rgba(52,211,153,.16);color:#7ee0b8}
+.badge.spec-art{background:rgba(244,114,182,.16);color:#f5a6cf}
+.badge.spec-fast{background:rgba(250,204,21,.16);color:#f3d36b}
+.badge.spec-custom{background:rgba(167,139,250,.16);color:#c5b5fb}
+.cp-kind.specialist{background:#3b5b4f;color:#c9f2df}
+
+/* 虚幻 5 · 蓝图检查：UE 编辑器内检查 */
+.ue-bp-check{margin-top:18px;padding-top:14px;border-top:1px solid var(--line,#3a3d44)}
+.ue-bp-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px;margin-top:8px;max-height:260px;overflow:auto}
+.ue-bp-list button{text-align:left;padding:8px 10px}
+.ue-bp-list small{display:block;font-size:10px;opacity:.6;margin-top:2px;word-break:break-all}
+.bp-msg{font-size:11px;color:#f0a77a;margin-top:4px;word-break:break-all}
+.module-agent-list{display:flex;flex-direction:column;gap:8px}.module-agent-row{padding:10px 12px;border:1px solid #3f444c;border-radius:5px;background:#292d32}.module-agent-row strong{width:105px;font-size:12px}.module-agent-row select{width:280px;padding:6px 8px;font-size:11px}.v3-card{border:1px solid #3f444c;border-radius:6px;background:#2a2d32;padding:16px}.free-create{border:1px solid #4a4c54;border-radius:7px;background:#2b2e33;padding:18px}.free-create textarea{min-height:150px}

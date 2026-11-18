@@ -1,0 +1,17 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.1.0",
+	"FriendlyName": "AIGW Bridge",
+	"Description": "让 AI 游戏开发工作站通过本机 MCP 直接操作 UE 编辑器（生成 / 变换 / 材质 / 导入 / PIE / 截图 / 撤销分组 / 受控脚本）。支持 UE 5.4 及以上。",
+	"Category": "Editor",
+	"CreatedBy": "AI Game Workstation",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"EnabledByDefault": true,
+	"Installed": false,
+	"Plugins": [
+		{ "Name": "PythonScriptPlugin", "Enabled": true },
+		{ "Name": "EditorScriptingUtilities", "Enabled": true }
+	]
+}

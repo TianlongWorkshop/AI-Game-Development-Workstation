@@ -1,0 +1,13 @@
+{
+  "name": "aigw-rebuilt",
+  "productName": "AI 游戏开发工作站 3.0 Alpha",
+  "version": "3.0.0-alpha.4",
+  "private": true,
+  "main": "main.cjs",
+  "description": "AI game development hub: connects Unreal Engine (official Unreal MCP), Blender (AIGW Bridge) and pluggable LLMs",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs && python tests/test_blender_bridge.py",
+    "start": "electron ."
+  },
+  "license": "UNLICENSED"
+}

@@ -1,18 +1,61 @@
-AI Game Workstation 3.0
-Clean offline installer package
+本目录于 2026-11-11 更新至 preview.5。按人工主导、AI 辅助的方向，将画布纳入 3D/动画/美术材质/虚幻 5；新增多参考实时连线、图片视频预览与标注、手动关节草稿和 UE 节点文本检查。51 项回归及实际界面验收通过。使用和能力边界见 Docs/05-20261111-专业工作区改造与验收.md；已打开的旧窗口请保存后重新启动。
 
-INSTALL
-1. Keep the installer file in this folder.
-2. Double-click AI-Game-Workstation-Setup.exe.
-3. The installer copies the clean application to your local application folder.
-4. It creates a desktop shortcut and a Start Menu shortcut when Windows allows it.
-5. You may open the application from the shortcut after installation.
+# AI 游戏开发工作站 · 独立重构预览版
 
-PACKAGE CONTENT
-This installer contains the clean application runtime only. Previous test projects, caches, logs, development backups, credentials and sample assets are not included.
+版本：2.0.0-preview.5。交付日期：2026-11-10（北京时间）。
 
-USER DATA
-The application may create its own user data after first launch. Existing user data is not deleted by an update installation.
+这是一套独立重写的 Windows 桌面应用。业务代码、任务模型、界面与总控指令均来自本次新工程；原安装软件、旧源码与旧项目未被替换。版本号表示本次重构的产品标识，不代表过去规划的所有能力都已实现。
 
-REQUIREMENTS
-Windows 10 or Windows 11. No network connection is required for installation.
+## 使用
+
+1. 把交付 ZIP 完整解压到可写的普通文件夹，例如你自己选择的游戏工具目录。
+2. 双击 `Application/AI-Game-Workstation.exe`。不需要安装 Node、Python 或启动网页服务。
+3. 首页点击“检测本机软件”。支持自动发现多个版本，也可在软件连接页手动绑定 `blender.exe` 或 `UnrealEditor.exe`。
+4. 新建项目，选择保存位置。已有文件夹不会被覆盖。也可以打开本版的项目文件夹。
+5. 点击“木箱道具”→“生成本地计划”→“创建待审批任务”→“批准并开始制作”。
+6. 完成后点击“查看输出资产”。GLB 可直接拖动旋转、滚轮缩放；PNG 可直接预览；`.blend` 可在 Blender 中继续编辑。
+
+可以通过“打开项目”选择交付包里的 `ExampleProject`，查看本次真实生成的木箱文件。仓库中的示例收据路径已改为相对路径；移动后请以资产面板中的实际路径为准。
+
+## 已实现范围
+
+| 能力 | 本版行为 |
+| --- | --- |
+| 项目 | 新建、打开、切换、最近记录、原生文件夹选择器 |
+| 资产 | 复制导入、不覆盖、受限扫描、分类、检索、属性、定位 |
+| 3D | 木箱、石柱、灰盒三个确定性模板；Blender 后台创建与导出 |
+| 验证 | 实际文件检查、GLB 文件头检查、独立 Blender 进程重导入 |
+| 预览 | 内嵌 GLB 静态三角网格、基础颜色、旋转与缩放；常见图片与部分文本 |
+| Agent | 本地规则计划；DeepSeek 有界计划；计划→待审批任务→执行 |
+| 模型 | DeepSeek 密钥 Windows 加密保存；费用确认、预算、缓存、调用记录 |
+| 专业软件 | 有界发现、版本验证、手动绑定、启动、打开 .blend / .uproject |
+| UE | 原生项目选择、版本关联提示、只读项目描述检查、蓝图能力契约 |
+| 任务 | 审批、进度、阶段日志、检查点暂停、取消、中断恢复提示 |
+| 工作流 | 已接通的固定本地制作工作流 |
+
+木箱闭环已经实机验证。石柱与灰盒模板使用同一执行与验证管线，本次未分别进行实机生产验收。
+
+## 边界
+
+- 本地生成是程序化模板建模，文字主要用于选择模板。没有把模板描述成任意 AI 图生 3D。
+- DeepSeek 连接代码已实现，尚未使用用户密钥完成远端调用验收。模型设置后，每次发送需求前仍会显示发送内容与费用上限；本次开发没有产生模型 API 费用。
+- UE 编辑器被发现并验证了文件和版本。启动代码已接通，本次未实际完成 UE GUI 启动、打开真实 UE 项目或引擎内操作验收。
+- 蓝图读写、自动编译、关卡修改、动捕、重定向、关键帧编辑、AI 生图与 PBR 贴图生成均未接通。对应页面如实标明能力边界。
+- GLB 预览是静态网格和基础材质颜色，不播放动画，不读取外部贴图或压缩网格；32 MB / 25 万三角形上限，复杂格式请用 Blender。
+- 素材扫描最多 4000 个文件、深度 10，跳过符号链接和常见缓存目录；达到上限会提示。
+- 便携版的 `Application/resources/app/Data` 存储此版本设置、任务及加密密钥。请放在可写目录；备份项目和 Data 后再迁移。密钥与 Windows 账户绑定，不保证跨机解密。
+- 已有任务中断时不会自动重试。核对部分输出后，重新生成计划并新建任务。
+- 这是未签名的便携预览版；没有修改原安装目录、创建系统服务或替换旧数据。尚未做干净电脑安装验收。
+- 为离线实机验证使用了本机现有 Electron 33.2.0 框架运行时。该运行时需要在正式发布前升级到官方维护版本并重新验证；不能把本包当作已完成生产安全审核的正式安装版。
+
+## 源码与重建
+
+源码在 `Source`。业务运行不依赖 npm 包，不加载远程网页脚本。已安装 Node 的开发电脑可运行：
+
+```powershell
+node --test tests/*.test.cjs
+```
+
+`Build-Portable.ps1` 接受一份完整的官方 Electron Windows x64 分发目录并生成新的便携目录。脚本拒绝覆盖非空输出目录。正式发布前使用受维护的 Electron 版本、签名和安装测试。
+
+文档入口：`Docs/00-重写开发总控指令.md`；技术与接口说明：`Docs/01-新架构与接口契约.md`；本次实测：`Docs/02-验证报告.md`。
