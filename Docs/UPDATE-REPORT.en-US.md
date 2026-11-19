@@ -1,4 +1,4 @@
-﻿# AI Game Workstation Update Report (English)
+# AI Game Workstation Update Report (English)
 
 Scope: public source preview `2.0.0-preview.6`; the current clean installer is still `2.0.0-preview.5` and should be rebuilt after the source version is stabilized.
 

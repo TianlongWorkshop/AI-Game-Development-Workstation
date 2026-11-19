@@ -1,137 +1,137 @@
 {
-    "version":  "2.0.0-preview.5",
-    "updatedAt":  "2026-11-10T19:00:25.367Z",
-    "files":  [
-                  {
-                      "path":  "main.cjs",
-                      "sha256":  "1e75d52224f48e09f66876012e06fc1006808015f0b1821b335ab0907daab33c"
-                  },
-                  {
-                      "path":  "core.cjs",
-                      "sha256":  "82f7f68d8b796ffbf1e2df1d37575a35da6954b40782efd5c592f62bada1167d"
-                  },
-                  {
-                      "path":  "preload.cjs",
-                      "sha256":  "d3a44851fc83f126fb249a7e62bcb51caf0828a5e52d46d582168883a274f374"
-                  },
-                  {
-                      "path":  "workflow.cjs",
-                      "sha256":  "5c34bf21301928561579c0c79507ff7a0552cdd3de0357ea25b17b763071d8ad"
-                  },
-                  {
-                      "path":  "ue-tools.cjs",
-                      "sha256":  "4d628fb95b0da0aa5bb4bebdb9832c97969ea61a5f0e997cbfc2fff35b25d8d3"
-                  },
-                  {
-                      "path":  "canvas-selftest.cjs",
-                      "sha256":  "e31350f6c0857a1cc98ba109a824845924e5dd86c9e6fc43b3c27c0983aca1ae"
-                  },
-                  {
-                      "path":  "blender_task.py",
-                      "sha256":  "8f7945bf7df8a296a445c4edd80ff4386f78208951b41dbaf4cc849da1348713"
-                  },
-                  {
-                      "path":  "package.json",
-                      "sha256":  "57e2e0c926ccc41363e8d96629d5f5e848c415da3255599cde56d60536f3c118"
-                  },
-                  {
-                      "path":  "ui/app.js",
-                      "sha256":  "a888c63c768b074b1cbdc8e663e0478867b7685d71ad97a13e7b4862d6500d19"
-                  },
-                  {
-                      "path":  "ui/blueprint.js",
-                      "sha256":  "bbe13a5df0c719be1d9011e6e3223f614693e7d8cfaa2c7f1493901ef3673be6"
-                  },
-                  {
-                      "path":  "ui/canvas.css",
-                      "sha256":  "989120044744755b87d919311cf1b8c5aefc0fa415c6b823022aca145a7583b4"
-                  },
-                  {
-                      "path":  "ui/canvas.js",
-                      "sha256":  "96899124b56634d4e9de00ba2dee249ec6caf4f3100424d2cdb4932f6a9e2eb8"
-                  },
-                  {
-                      "path":  "ui/graph.js",
-                      "sha256":  "92ce85af4772af1ed31530d773f0aa85395ca153e050b1573c02e37d134d3cef"
-                  },
-                  {
-                      "path":  "ui/index.html",
-                      "sha256":  "c67c6c369698abb7396d273253a9157ab965ca23dd1c7b61a73cb34631a7b561"
-                  },
-                  {
-                      "path":  "ui/rig-data.js",
-                      "sha256":  "dcdc62e2e5006a5f42d8228e7c8437a30f15d7615fb254c9b4ca0519b13ce205"
-                  },
-                  {
-                      "path":  "ui/rig-editor.js",
-                      "sha256":  "89a633c5cb7a841f4c55ca727deb01da9971dd393fa2043e30b6aa0ff20e8aaa"
-                  },
-                  {
-                      "path":  "ui/style.css",
-                      "sha256":  "6d11e28486044f8fd01b2887b429ea1b5d9e9253974bcae9225954cdd1a74de6"
-                  },
-                  {
-                      "path":  "ui/viewer.js",
-                      "sha256":  "1aa98aab6b70dad48233c30dfc4778758389557fa273e7eaa004f06b4ed7a027"
-                  },
-                  {
-                      "path":  "ui/workbench.js",
-                      "sha256":  "b49f79d1a1c3aec736a59f69f08e941d4de1fd476256294df93ef6d6ec79e0a1"
-                  }
-              ],
-    "dataUntouched":  true,
-    "backup":  "[local path omitted]",
-    "automatedTests":  {
-                           "passed":  51,
-                           "failed":  0
-                       },
-    "acceptance":  {
-                       "exitCode":  0,
-                       "ok":  true,
-                       "checks":  [
-                                      "standalone workflow tab removed",
-                                      "three creation categories",
-                                      "asset drawer drag creates standalone node",
-                                      "actual image preview decoded",
-                                      "wire visible during drag",
-                                      "wire visible during drag",
-                                      "wire visible during drag",
-                                      "three images share one collection port",
-                                      "wire visible during drag",
-                                      "wire visible during drag",
-                                      "two models share one collection port",
-                                      "wire visible during drag",
-                                      "video connects to 3D context",
-                                      "real WebM decoding and media metadata",
-                                      "video reference frame saved",
-                                      "multi-reference graph persisted",
-                                      "video segment annotation enters AI context",
-                                      "wire visible during drag",
-                                      "animation has isolated video canvas",
-                                      "wire visible during drag",
-                                      "materials has isolated video canvas",
-                                      "wire visible during drag",
-                                      "ue has isolated video canvas",
-                                      "real GLB outline loaded into rig editor",
-                                      "joint manually repositioned",
-                                      "joint position persisted",
-                                      "unselected joint unchanged",
-                                      "clipboard blueprint rendered",
-                                      "external-link warning shown",
-                                      "problem locates actual node",
-                                      "UE original text preserved",
-                                      "workspace return preserves references",
-                                      "immutable recipe, original project, manifest and asset hash verified"
-                                  ],
-                       "validation":  {
-                                          "ok":  true,
-                                          "meshes":  38,
-                                          "vertices":  5286,
-                                          "triangles":  4104,
-                                          "blender":  "4.4.1"
-                                      },
-                       "data":  "[local path omitted]"
-                   },
-    "scope":  "Professional workspaces, manual references/joints, clipboard blueprint checks; semantic vision/pose recognition, skinning and UE bridge incomplete",
-    "report":  "Docs/05-20261111-涓撲笟宸ヤ綔鍖烘敼閫犱笌楠屾敹.md"
+  "version": "2.0.0-preview.5",
+  "updatedAt": "2026-11-10T19:00:25.367Z",
+  "files": [
+    {
+      "path": "main.cjs",
+      "sha256": "1e75d52224f48e09f66876012e06fc1006808015f0b1821b335ab0907daab33c"
+    },
+    {
+      "path": "core.cjs",
+      "sha256": "82f7f68d8b796ffbf1e2df1d37575a35da6954b40782efd5c592f62bada1167d"
+    },
+    {
+      "path": "preload.cjs",
+      "sha256": "d3a44851fc83f126fb249a7e62bcb51caf0828a5e52d46d582168883a274f374"
+    },
+    {
+      "path": "workflow.cjs",
+      "sha256": "5c34bf21301928561579c0c79507ff7a0552cdd3de0357ea25b17b763071d8ad"
+    },
+    {
+      "path": "ue-tools.cjs",
+      "sha256": "4d628fb95b0da0aa5bb4bebdb9832c97969ea61a5f0e997cbfc2fff35b25d8d3"
+    },
+    {
+      "path": "canvas-selftest.cjs",
+      "sha256": "e31350f6c0857a1cc98ba109a824845924e5dd86c9e6fc43b3c27c0983aca1ae"
+    },
+    {
+      "path": "blender_task.py",
+      "sha256": "8f7945bf7df8a296a445c4edd80ff4386f78208951b41dbaf4cc849da1348713"
+    },
+    {
+      "path": "package.json",
+      "sha256": "57e2e0c926ccc41363e8d96629d5f5e848c415da3255599cde56d60536f3c118"
+    },
+    {
+      "path": "ui/app.js",
+      "sha256": "a888c63c768b074b1cbdc8e663e0478867b7685d71ad97a13e7b4862d6500d19"
+    },
+    {
+      "path": "ui/blueprint.js",
+      "sha256": "bbe13a5df0c719be1d9011e6e3223f614693e7d8cfaa2c7f1493901ef3673be6"
+    },
+    {
+      "path": "ui/canvas.css",
+      "sha256": "989120044744755b87d919311cf1b8c5aefc0fa415c6b823022aca145a7583b4"
+    },
+    {
+      "path": "ui/canvas.js",
+      "sha256": "96899124b56634d4e9de00ba2dee249ec6caf4f3100424d2cdb4932f6a9e2eb8"
+    },
+    {
+      "path": "ui/graph.js",
+      "sha256": "92ce85af4772af1ed31530d773f0aa85395ca153e050b1573c02e37d134d3cef"
+    },
+    {
+      "path": "ui/index.html",
+      "sha256": "c67c6c369698abb7396d273253a9157ab965ca23dd1c7b61a73cb34631a7b561"
+    },
+    {
+      "path": "ui/rig-data.js",
+      "sha256": "dcdc62e2e5006a5f42d8228e7c8437a30f15d7615fb254c9b4ca0519b13ce205"
+    },
+    {
+      "path": "ui/rig-editor.js",
+      "sha256": "89a633c5cb7a841f4c55ca727deb01da9971dd393fa2043e30b6aa0ff20e8aaa"
+    },
+    {
+      "path": "ui/style.css",
+      "sha256": "6d11e28486044f8fd01b2887b429ea1b5d9e9253974bcae9225954cdd1a74de6"
+    },
+    {
+      "path": "ui/viewer.js",
+      "sha256": "1aa98aab6b70dad48233c30dfc4778758389557fa273e7eaa004f06b4ed7a027"
+    },
+    {
+      "path": "ui/workbench.js",
+      "sha256": "b49f79d1a1c3aec736a59f69f08e941d4de1fd476256294df93ef6d6ec79e0a1"
+    }
+  ],
+  "dataUntouched": true,
+  "backup": "E:\\box4\\AI-Game-Workstation-Audit-20261111\\Before-Workbench-Runtime-preview4",
+  "automatedTests": {
+    "passed": 51,
+    "failed": 0
+  },
+  "acceptance": {
+    "exitCode": 0,
+    "ok": true,
+    "checks": [
+      "standalone workflow tab removed",
+      "three creation categories",
+      "asset drawer drag creates standalone node",
+      "actual image preview decoded",
+      "wire visible during drag",
+      "wire visible during drag",
+      "wire visible during drag",
+      "three images share one collection port",
+      "wire visible during drag",
+      "wire visible during drag",
+      "two models share one collection port",
+      "wire visible during drag",
+      "video connects to 3D context",
+      "real WebM decoding and media metadata",
+      "video reference frame saved",
+      "multi-reference graph persisted",
+      "video segment annotation enters AI context",
+      "wire visible during drag",
+      "animation has isolated video canvas",
+      "wire visible during drag",
+      "materials has isolated video canvas",
+      "wire visible during drag",
+      "ue has isolated video canvas",
+      "real GLB outline loaded into rig editor",
+      "joint manually repositioned",
+      "joint position persisted",
+      "unselected joint unchanged",
+      "clipboard blueprint rendered",
+      "external-link warning shown",
+      "problem locates actual node",
+      "UE original text preserved",
+      "workspace return preserves references",
+      "immutable recipe, original project, manifest and asset hash verified"
+    ],
+    "validation": {
+      "ok": true,
+      "meshes": 38,
+      "vertices": 5286,
+      "triangles": 4104,
+      "blender": "4.4.1"
+    },
+    "data": "E:\\box4\\AI-Game-Workstation-Audit-20261111\\Workbench-E2E-1794337077918"
+  },
+  "scope": "Professional workspaces, manual references/joints, clipboard blueprint checks; semantic vision/pose recognition, skinning and UE bridge incomplete",
+  "report": "Docs/05-20261111-专业工作区改造与验收.md"
 }
